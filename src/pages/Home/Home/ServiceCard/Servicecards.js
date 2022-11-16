@@ -30,14 +30,21 @@ const Servicecards = () => {
 
 
     return (
-        <div className='grid lg: grid-cols-3 grid-cols-1 mt-10 gap-6'>
-            {
-                serviceData.map(card => <Servicecard
-                    key={card.id}
-                    card={card}
-                ></Servicecard>)
-            }
 
+        <div>
+            <div className='mt-10'>
+                <h2 className='text-center text-3xl text-primary font-bold'>OUR SERVICES</h2>
+                <h3 className='text-center text-4xl' >Services We Provide</h3>
+            </div>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-16'>
+                {
+                    serviceData.map(card => <Servicecard
+                        key={card.id}
+                        card={card}
+                    ></Servicecard>)
+                }
+
+            </div>
         </div>
     );
 };
