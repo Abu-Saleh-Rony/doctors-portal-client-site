@@ -10,7 +10,7 @@ const Servicecards = () => {
     const serviceData = [
         {
             id: 1,
-            name: 'fluoride treatment',
+            name: 'Fluoride treatment',
             description: 'Fluoride varnish can be applied to both baby teeth and adult teeth by a dentist.',
             icon: fluoride,
         },
@@ -33,7 +33,7 @@ const Servicecards = () => {
 
         <div>
             <div className='mt-10'>
-                <h2 className='text-center text-3xl text-primary font-bold'>OUR SERVICES</h2>
+                <h2 className='text-center text-2xl text-primary font-bold'>OUR SERVICES</h2>
                 <h3 className='text-center text-4xl' >Services We Provide</h3>
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-16'>
