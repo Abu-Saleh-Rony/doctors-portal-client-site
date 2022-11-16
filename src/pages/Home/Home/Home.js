@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import Infocards from '../Infocards/Infocards';
 import Cardsection from './Cardsection/Cardsection';
+import Makeappointment from './Makeappointment/Makeappointment';
 import Servicecards from './ServiceCard/Servicecards';
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
             <Infocards></Infocards>
             <Servicecards></Servicecards>
             <Cardsection></Cardsection>
+            <Makeappointment></Makeappointment>
 
         </div>
     );
