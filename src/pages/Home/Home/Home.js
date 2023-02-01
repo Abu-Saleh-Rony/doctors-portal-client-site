@@ -5,6 +5,7 @@ import Cardsection from './Cardsection/Cardsection';
 import Makeappointment from './Makeappointment/Makeappointment';
 import Servicecards from './ServiceCard/Servicecards';
 
+
 const Home = () => {
     return (
         <div className='mx-5'>
@@ -13,6 +14,7 @@ const Home = () => {
             <Servicecards></Servicecards>
             <Cardsection></Cardsection>
             <Makeappointment></Makeappointment>
+
 
         </div>
     );
