@@ -26,7 +26,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="footer-title">Our Address</span>
-                    <Link to="/" className="link link-hover">New York-101010 Hudson</Link>
+                    <Link to="/" className="link link-hover">San Jose, Califonia, USA</Link>
 
                 </div>
             </div>
