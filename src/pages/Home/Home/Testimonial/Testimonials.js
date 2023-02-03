@@ -35,7 +35,7 @@ const Testimonials = () => {
             location: 'california',
         }]
     return (
-        <section className='my-12'>
+        <section className='my-8'>
             <div className='flex justify-between'>
                 <div>
                     <h4 className="text-xl text-primary font-bold">Testimonial</h4>

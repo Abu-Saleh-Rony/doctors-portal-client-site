@@ -5,9 +5,9 @@ import appointment from '../../../../assets/images/appointment.png';
 const Makeappointment = () => {
     return (
         <section className='mt-32' style={{ background: `url(${appointment})` }}>
-            <div className="hero mt-10 mx-16">
+            <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src={doctor} alt='' className=" -mt-32 w-1/2 rounded" />
+                    <img src={doctor} alt='' className="-mt-32 hidden md:block lg:w-1/2 rounded-lg " />
                     <div className='mx-10'>
                         <h2 className='text-primary'>Appointment</h2>
                         <h1 className="text-3xl font-bold text-white">Make an appointment Today</h1>
