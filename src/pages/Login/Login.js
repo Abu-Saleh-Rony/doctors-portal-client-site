@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
@@ -7,7 +8,7 @@ const Login = () => {
         console.log(data);
     }
     return (
-        <div className='h-[800px] flex justify-center items-center'>
+        <div className='h-[700px] flex justify-center items-center'>
             <div className='w-96 p-6'>
                 <h2 className='text-center'>Login</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
@@ -27,8 +28,8 @@ const Login = () => {
                         </label>
                     </div>
                     <input className='btn btn-accent w-full' value="Login" type="text" />
-
                 </form>
+                <p>New to doctor portals? <Link className='text-secondary' to="/Signup">Create a new account </Link> </p>
             </div>
         </div>
     );
