@@ -30,6 +30,8 @@ const Login = () => {
                     <input className='btn btn-accent w-full' value="Login" type="text" />
                 </form>
                 <p>New to doctor portals? <Link className='text-secondary' to="/Signup">Create a new account </Link> </p>
+                <div className="divider">OR</div>
+                <input className='btn btn-outline w-full' value="continue with google" type="text" />
             </div>
         </div>
     );
