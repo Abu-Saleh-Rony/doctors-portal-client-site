@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
+
 const Login = () => {
     const { register, handleSubmit } = useForm();
-    const handleLogin = data => {
+
+    const onSubmit = data => {
         console.log(data);
     }
+
     return (
         <div className='h-[700px] flex justify-center items-center'>
             <div className='w-96 p-6'>
                 <h2 className='text-center'>Login</h2>
-                <form onSubmit={handleSubmit(handleLogin)}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Email</span>
