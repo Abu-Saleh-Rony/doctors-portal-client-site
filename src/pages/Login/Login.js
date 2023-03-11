@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 
 
 const Login = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = data => {
         console.log(data);
     }
+
 
     return (
         <div className='h-[700px] flex justify-center items-center'>
@@ -19,18 +20,24 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="text" {...register("email")} className="input input-bordered w-full" />
+                        <input type="text" {...register("email", {
+                            required: "Email Address is required",
+                        })} className="input input-bordered w-full" />
+                        {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" {...register("password")} className="input input-bordered w-full" />
+                        <input type="password" {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be 6 characters or longer" } })}
+                            className="input input-bordered w-full" />
+                        {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                         <label className="label">
                             <span className="label-text">Forget Password?</span>
                         </label>
                     </div>
-                    <input className='btn btn-accent w-full' value="Login" type="text" />
+                    <button className='btn btn-accent w-full' type='submit'>Login</button>
+
                 </form>
                 <p>New to doctor portals? <Link className='text-secondary' to="/Signup">Create a new account </Link> </p>
                 <div className="divider">OR</div>
