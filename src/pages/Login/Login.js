@@ -10,7 +10,6 @@ const Login = () => {
         console.log(data);
     }
 
-
     return (
         <div className='h-[700px] flex justify-center items-center'>
             <div className='w-96 p-6'>
@@ -20,7 +19,7 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="text" {...register("email", {
+                        <input type="email" {...register("email", {
                             required: "Email Address is required",
                         })} className="input input-bordered w-full" />
                         {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
