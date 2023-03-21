@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Contexts/AuthProvider";
+
 
 const Signup = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const handleSignup = data => {
+    const { createUser, handleGoogleSignIn } = useContext(AuthContext);
 
+
+    const handleSignup = data => {
         console.log(data);
+        createUser(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error) => console.log(error));
+
+        handleGoogleSignIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error) => console.log(error));
+
     }
 
 
@@ -53,7 +71,7 @@ const Signup = () => {
                 </form>
                 <p>Already Have An Account? <Link className='text-secondary' to="/Login">Please Login </Link> </p>
                 <div className="divider">OR</div>
-                <input className='btn btn-outline w-full' value="continue with google" type="text" />
+                <button className='btn btn-outline w-full' onClick={handleGoogleSignIn} value="submit" >continue with google</button>
             </div>
         </div>
     );
