@@ -14,10 +14,12 @@ const Navbar = () => {
         <li><Link to='/Home'>Home</Link></li>
         <li><Link to='/About'>About</Link></li>
         <li><Link to='/Appointment'>Appointment</Link></li>
-        <li><Link to='/Reviews'>Reviews</Link></li>
         <li><Link to='/Contact'>Contact Us</Link></li>
         {user?.uid ?
-            <li><button onClick={handleLogOut}>Sign out</button></li>
+            <>
+                <li><Link to='/Dashboard'>Dashboard</Link></li>
+                <li><button onClick={handleLogOut}>Sign out</button></li>
+            </>
             : <li><Link to='/Login'>Login</Link></li>
         }
     </React.Fragment>
