@@ -21,7 +21,11 @@ const Login = () => {
                 setLoginError(error.message);
             });
 
-        handleGoogleSignIn(data.email, data.password)
+
+    }
+    const googleSignin = () => {
+
+        handleGoogleSignIn()
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -29,7 +33,6 @@ const Login = () => {
             .catch(error => {
                 console.error('error:', error);
             });
-
     }
 
     return (
@@ -62,7 +65,7 @@ const Login = () => {
                 </form>
                 <p>New to doctor portals? <Link className='text-secondary' to="/Signup">Create a new account </Link> </p>
                 <div className="divider">OR</div>
-                <button className='btn btn-outline w-full' onClick={handleGoogleSignIn} value="submit">continue with google</button>
+                <button className='btn btn-outline w-full' onClick={googleSignin} >continue with google</button>
             </div>
         </div>
     );

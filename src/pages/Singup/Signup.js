@@ -19,14 +19,9 @@ const Signup = () => {
             })
             .catch((error) => console.log(error));
 
-        handleGoogleSignIn(data.email, data.password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .catch((error) => console.log(error));
 
     }
+
 
 
     return (
