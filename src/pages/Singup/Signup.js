@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 
@@ -7,21 +8,31 @@ import { AuthContext } from "../../Contexts/AuthProvider";
 const Signup = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { createUser, handleGoogleSignIn } = useContext(AuthContext);
+    const { createUser, handleGoogleSignIn, updateUser } = useContext(AuthContext);
+    const [singUpError, setSignUpError] = useState('');
 
 
     const handleSignup = data => {
         console.log(data);
+        setSignUpError('');
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast('User Created Successfully')
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => { })
+                    .catch(err => console.log(err))
             })
-            .catch((error) => console.log(error));
-
+            .catch((error) => {
+                console.log(error)
+                setSignUpError(error.message);
+            });
 
     }
-
 
 
     return (
@@ -62,7 +73,7 @@ const Signup = () => {
                         </label>
                     </div>
                     <button className='btn btn-accent w-full' type='submit'>Signup</button>
-
+                    {singUpError && <p className="text-red-600">{singUpError}</p>}
                 </form>
                 <p>Already Have An Account? <Link className='text-secondary' to="/Login">Please Login </Link> </p>
                 <div className="divider">OR</div>
